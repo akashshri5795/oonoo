@@ -1,0 +1,32 @@
+<svg width="512" height="512" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="55%" stop-color="#6D28D9"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="ringA" x1="20" y1="30" x2="60" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DCD6FF"/>
+    </linearGradient>
+    <linearGradient id="ringB" x1="68" y1="30" x2="108" y2="98" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background tile -->
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <rect width="128" height="128" rx="28" fill="white" opacity="0.04"/>
+
+  <!-- interlocking double-O monogram -->
+  <circle cx="48" cy="64" r="23" fill="none" stroke="url(#ringA)" stroke-width="11"/>
+  <circle cx="80" cy="64" r="23" fill="none" stroke="url(#ringB)" stroke-width="11" opacity="0.92"/>
+
+  <!-- connection node where the two O's meet -->
+  <circle cx="64" cy="64" r="6" fill="#09090B"/>
+  <circle cx="64" cy="64" r="3.2" fill="#C4B5FD"/>
+
+  <!-- subtle top-light for depth -->
+  <rect width="128" height="64" rx="28" fill="white" opacity="0.05"/>
+</svg>
