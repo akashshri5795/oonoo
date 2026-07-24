@@ -128,10 +128,8 @@ const PROJECTS = [
 const TECH = ["React", "Next.js", "Node.js", "Java", "Spring Boot", "Python", "Laravel", "Flutter", "Docker", "AWS", "MongoDB", "PostgreSQL", "MySQL", "Redis", "Kubernetes"];
 
 const TESTIMONIALS = [
-  { name: "Rahul Kumar", role: "COO, PaperGenAi", quote: "OONOO understood exactly what an AI product needs — clean architecture, fast iteration, and a UI that doesn't get in the way. They shipped without cutting corners.", rating: 5 },
-  { name: "Ishika Gupta", role: "Owner, Gyatri Chemical", quote: "We had no digital system before this — just registers and spreadsheets. OONOO gave us a proper inventory and billing setup that our whole team actually uses.", rating: 5 },
-  { name: "Ravinder", role: "Head of Publishing, Warehouse", quote: "They built our publishing workflow around how our editorial team actually works, not a generic template. Turnaround on content now takes a fraction of the time.", rating: 5 },
-];
+  { name: "Gyatri Chemicals", role: "Chemical Manufacturing Company", quote: "The React website developed by OONOO Technologies gave our brand a professional online presence. The team delivered a clean, responsive, and user-friendly website that exceeded our expectations.", rating: 5 },
+ ];
 
 const PRICING = [
   { name: "Starter", desc: "For a single focused product or MVP.", features: ["1 dedicated squad", "Web or mobile app", "Bi-weekly sprint demos", "3 months support included"] },
@@ -228,10 +226,6 @@ export default function OonooLanding() {
       document.removeEventListener("mouseleave", leave);
     };
   }, []);
-
-  const revenue = useCounter(482300, 1800, heroInView);
-  const orders = useCounter(1284, 1500, heroInView);
-  const uptime = useCounter(999, 1400, heroInView);
 
   const navLinks = [
     { label: "Services", href: "#services" },
@@ -443,7 +437,7 @@ export default function OonooLanding() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="oo-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] font-semibold">
-                We Build ERP, CRM &amp; SaaS Products That Scale Your Business
+               Building Modern ERP, CRM, AI & Custom Software for Growing Businesses
               </h1>
             </Reveal>
             <Reveal delay={160}>
@@ -464,11 +458,27 @@ export default function OonooLanding() {
             </Reveal>
             <Reveal delay={320}>
               <div className="mt-12 flex items-center gap-8 text-sm" style={{ color: T.muted }}>
-                <div><span className="text-white font-semibold oo-display text-xl">60+</span><br />products shipped</div>
+                <div>
+                  <span className="text-white font-semibold oo-display text-xl">2026</span>
+                  <br />
+                  Founded
+                </div>
+
                 <div className="w-px h-8" style={{ background: T.border }} />
-                <div><span className="text-white font-semibold oo-display text-xl">99.9%</span><br />avg. uptime</div>
+
+                <div>
+                  <span className="text-white font-semibold oo-display text-xl">20+</span>
+                  <br />
+                  Technologies
+                </div>
+
                 <div className="w-px h-8" style={{ background: T.border }} />
-                <div><span className="text-white font-semibold oo-display text-xl">8 yrs</span><br />building software</div>
+
+                <div>
+                  <span className="text-white font-semibold oo-display text-xl">24/7</span>
+                  <br />
+                  Support
+                </div>
               </div>
             </Reveal>
           </div>
@@ -478,35 +488,38 @@ export default function OonooLanding() {
             <div className="oo-gradient-border oo-float absolute top-2 right-4 w-64" style={{ animationDelay: "0.2s" }}>
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-medium" style={{ color: T.muted }}>Monthly Revenue</span>
+                  <span className="text-xs font-medium" style={{ color: T.muted }}>Technologies</span>
                   <TrendingUp size={15} color={T.accent} />
                 </div>
-                <div className="oo-display text-2xl font-semibold">₹{revenue.toLocaleString("en-IN")}</div>
+
+                <div className="oo-display text-2xl font-semibold"> 20 +</div>
                 <div className="mt-3 h-1.5 rounded-full" style={{ background: "rgba(255,255,255,0.06)" }}>
                   <div className="h-1.5 rounded-full" style={{ width: "72%", background: `linear-gradient(90deg, ${T.primary}, ${T.accent})` }} />
                 </div>
+                <div className="mt-2 text-xs" style={{ color: T.muted }}>  Modern Technologies</div>
               </div>
             </div>
 
-            <div className="oo-gradient-border oo-float-slow absolute top-40 left-0 w-56" style={{ animationDelay: "0.6s" }}>
+            <div className="oo-gradient-border oo-float-slow absolute top-60 left-0 w-56" style={{ animationDelay: "0.6s" }}>
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-medium" style={{ color: T.muted }}>Active Orders</span>
+                  <span className="text-xs font-medium" style={{ color: T.muted }}>Experience</span>
                   <Activity size={15} color={T.accent} />
                 </div>
-                <div className="oo-display text-2xl font-semibold">{orders.toLocaleString("en-IN")}</div>
-                <div className="mt-2 text-xs" style={{ color: "#4ADE80" }}>+18% this week</div>
+                <div className="oo-display text-2xl font-semibold"> 8 + Years</div>
+                <div className="mt-2 text-xs" style={{ color: T.muted }}>Team Experience</div>
               </div>
+              
             </div>
 
             <div className="oo-gradient-border oo-float absolute bottom-2 right-10 w-52" style={{ animationDelay: "1s" }}>
               <div className="p-5">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-medium" style={{ color: T.muted }}>System Uptime</span>
+                  <span className="text-xs font-medium" style={{ color: T.muted }}>Support</span>
                   <Server size={15} color={T.accent} />
                 </div>
-                <div className="oo-display text-2xl font-semibold">{(uptime / 10).toFixed(1)}%</div>
-                <div className="mt-2 text-xs" style={{ color: T.muted }}>Across 6 production clusters</div>
+                <div className="oo-display text-2xl font-semibold"> 24 / 7</div>
+                <div className="mt-2 text-xs" style={{ color: T.muted }}>Client Support</div>
               </div>
             </div>
           </div>
@@ -517,12 +530,12 @@ export default function OonooLanding() {
       <section className="px-6 lg:px-8 py-14 border-t border-b" style={{ borderColor: T.border }}>
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-xs font-medium tracking-wide uppercase mb-8" style={{ color: T.muted }}>
-            Trusted by growing teams across industries
+            Expertise in growing Tech Stack
           </p>
           <div className="overflow-hidden">
             <div className="oo-marquee-track gap-16 opacity-60">
               {[...Array(2)].flatMap((_, i) =>
-                ["Meditrack", "Stockwise", "Verlino", "Northbridge", "Cirrus Retail", "Panvel HR", "Flotilla Logistics"].map((n, j) => (
+                ["React", "Next.js", "Node.js", "Java", "Spring Boot", "Python", "Laravel", "Flutter", "Docker", "AWS", "MongoDB", "PostgreSQL", "MySQL", "Redis", "Kubernetes"].map((n, j) => (
                   <span key={`${i}-${j}`} className="oo-display text-xl font-semibold whitespace-nowrap" style={{ color: T.muted }}>{n}</span>
                 ))
               )}
@@ -603,8 +616,8 @@ export default function OonooLanding() {
       <section id="projects" className="px-6 lg:px-8 py-28 border-t" style={{ borderColor: T.border }}>
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <Eyebrow>Selected work</Eyebrow>
-            <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Products shipped and running today</h2>
+            <Eyebrow>Solutions We Build</Eyebrow>
+            <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Examples of platforms we develop</h2>
           </Reveal>
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROJECTS.map((p, i) => (
@@ -647,8 +660,8 @@ export default function OonooLanding() {
       <section className="px-6 lg:px-8 py-28 border-t" style={{ borderColor: T.border }}>
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <Eyebrow>Client feedback</Eyebrow>
-            <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">What running teams say after launch</h2>
+            <Eyebrow>Early Collaborations</Eyebrow>
+            <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Let's build the next success story together.</h2>
           </Reveal>
           <div className="mt-14 grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t, i) => (
