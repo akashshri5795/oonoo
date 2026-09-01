@@ -1,11 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  Building2, Users2, Boxes, Code2, Brain, Smartphone, Globe, Plug,
-  ShieldCheck, Zap, Layers, GitBranch, Lock, Headphones, ArrowRight,
+  ArrowRight,
   ArrowUpRight, Menu, X, ChevronDown, Star, Check, ArrowUp, Server,
-  TrendingUp, Activity, Search, PenTool, Hammer, Rocket, LifeBuoy,
-  ClipboardCheck, Mail, Phone, MapPin, Link2, MessageCircle, Contact,
+  TrendingUp, Activity,
+  Mail, Phone, MapPin, Link2, MessageCircle, Contact,
 } from "lucide-react";
+
+/* ---------------------------------------------------------------------- */
+/*  Data                                                                  */
+/* ---------------------------------------------------------------------- */
+
+import { Pojects, Services, Features, Process, Tech, Testimonials, Pricing, FAQ } from "./constants/data.js";
 
 /* ---------------------------------------------------------------------- */
 /*  Design tokens (per brief)                                             */
@@ -81,69 +86,6 @@ function useCounter(target, duration = 1600, start = false) {
   return val;
 }
 
-/* ---------------------------------------------------------------------- */
-/*  Data                                                                  */
-/* ---------------------------------------------------------------------- */
-const SERVICES = [
-  { icon: Building2, title: "Enterprise ERP Development", desc: "Unified systems that connect finance, inventory, HR and operations into one source of truth." },
-  { icon: Users2, title: "CRM Development", desc: "Pipelines, automation and reporting built around how your sales team actually sells." },
-  { icon: Boxes, title: "SaaS Product Development", desc: "Multi-tenant platforms engineered to onboard your first customer and your ten-thousandth." },
-  { icon: Code2, title: "Custom Software", desc: "Purpose-built tools for workflows that off-the-shelf software was never designed for." },
-  { icon: Brain, title: "AI Powered Solutions", desc: "Applied AI for forecasting, support automation and decision support inside your product." },
-  { icon: Smartphone, title: "Mobile Applications", desc: "Native-feel iOS and Android apps sharing a single backend with your web platform." },
-  { icon: Globe, title: "Web Applications", desc: "Fast, accessible web apps built on modern frameworks and tuned for real usage." },
-  { icon: Plug, title: "API Integrations", desc: "Clean, documented APIs that connect your product to the tools your customers rely on." },
-];
-
-const FEATURES = [
-  { icon: Layers, title: "Enterprise Architecture", desc: "Systems designed to hold their shape as your team and data grow." },
-  { icon: GitBranch, title: "Scalable Code", desc: "Modular, testable codebases handed to you clean — never a black box." },
-  { icon: Zap, title: "Fast Delivery", desc: "Working software in weeks, with visible progress every sprint." },
-  { icon: Code2, title: "Modern Tech Stack", desc: "Current, well-supported tools chosen for your problem, not our habits." },
-  { icon: ClipboardCheck, title: "Agile Development", desc: "Two-week sprints, transparent boards, no surprises at delivery." },
-  { icon: Users2, title: "Dedicated Team", desc: "The same engineers from kickoff to launch — no rotating contractors." },
-  { icon: Lock, title: "Security First", desc: "Auth, encryption and access control designed in from day one." },
-  { icon: LifeBuoy, title: "Long Term Support", desc: "SLAs and a support desk that stay with your product after launch." },
-];
-
-const PROCESS = [
-  { icon: Search, title: "Discovery", desc: "We map your workflows, users and constraints before writing a line of code." },
-  { icon: PenTool, title: "Planning", desc: "Scope, architecture and milestones locked into a shared roadmap." },
-  { icon: Layers, title: "Design", desc: "Wireframes and UI systems reviewed with you before development starts." },
-  { icon: Hammer, title: "Development", desc: "Sprint-based builds with staging environments you can test anytime." },
-  { icon: ShieldCheck, title: "Testing", desc: "QA, load testing and security review before anything ships." },
-  { icon: Rocket, title: "Deployment", desc: "Zero-downtime releases to production, monitored end to end." },
-  { icon: LifeBuoy, title: "Support", desc: "Ongoing monitoring, fixes and enhancements after go-live." },
-];
-
-const PROJECTS = [
-  { title: "Hospital ERP", tag: "Healthcare", stack: "React · Node.js · PostgreSQL", desc: "Patient records, billing and bed management unified for a 300-bed hospital network.", color1: "#6D28D9", color2: "#312E81" },
-  { title: "School Management System", tag: "Education", stack: "Next.js · Spring Boot · MySQL", desc: "Admissions, attendance and fee tracking for a 12-campus school group.", color1: "#7C3AED", color2: "#1E3A8A" },
-  { title: "Retail POS", tag: "Retail", stack: "React Native · Node.js · Redis", desc: "Offline-first point of sale syncing inventory across 40+ store locations.", color1: "#8B5CF6", color2: "#4C1D95" },
-  { title: "HR Management System", tag: "Human Resources", stack: "React · Laravel · MongoDB", desc: "Payroll, leave and performance reviews for a 2,000-employee workforce.", color1: "#6D28D9", color2: "#1E1B4B" },
-  { title: "CRM Platform", tag: "Sales", stack: "React · Python · PostgreSQL", desc: "Pipeline automation and forecasting built for a B2B sales team of 60.", color1: "#7C3AED", color2: "#312E81" },
-  { title: "Inventory SaaS", tag: "Logistics", stack: "Next.js · Node.js · Docker", desc: "Multi-warehouse stock tracking with live low-stock alerts, sold as SaaS.", color1: "#8B5CF6", color2: "#3730A3" },
-];
-
-const TECH = ["React", "Next.js", "Node.js", "Java", "Spring Boot", "Python", "Laravel", "Flutter", "Docker", "AWS", "MongoDB", "PostgreSQL", "MySQL", "Redis", "Kubernetes"];
-
-const TESTIMONIALS = [
-  { name: "Gyatri Chemicals", role: "Chemical Manufacturing Company", quote: "The React website developed by OONOO Technologies gave our brand a professional online presence. The team delivered a clean, responsive, and user-friendly website that exceeded our expectations.", rating: 5 },
- ];
-
-const PRICING = [
-  { name: "Starter", desc: "For a single focused product or MVP.", features: ["1 dedicated squad", "Web or mobile app", "Bi-weekly sprint demos", "3 months support included"] },
-  { name: "Business", desc: "For growing platforms with multiple modules.", features: ["Dedicated engineering pod", "Web + mobile app", "Weekly sprint demos", "12 months support included", "Priority response SLA"], featured: true },
-  { name: "Enterprise", desc: "For large-scale ERP and multi-team rollouts.", features: ["Multiple dedicated squads", "Custom architecture review", "Daily standups with your team", "24/7 support desk", "On-site onboarding available"] },
-];
-
-const FAQ = [
-  { q: "How long does a typical project take?", a: "A focused MVP usually takes 8–12 weeks. Larger ERP or multi-module platforms run 4–9 months, scoped in phases so you see working software early." },
-  { q: "Do you work with an existing codebase?", a: "Yes. We regularly audit and extend systems we didn't build, including legacy ERPs, before proposing a rebuild." },
-  { q: "Who owns the code after launch?", a: "You do, fully. Source code, documentation and deployment access are handed over as part of every engagement." },
-  { q: "Can you support us after the product ships?", a: "Every plan includes a support window, and we offer ongoing SLAs for monitoring, fixes and new features after that." },
-  { q: "Where is your team based?", a: "OONOO Technologies is headquartered in India with engineers working in your time zone overlap for daily collaboration." },
-];
 
 /* ---------------------------------------------------------------------- */
 /*  Small building blocks                                                 */
@@ -437,7 +379,7 @@ export default function OonooLanding() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="oo-display text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.08] font-semibold">
-               Building Modern ERP, CRM, AI & Custom Software for Growing Businesses
+                Building Modern ERP, CRM, AI & Custom Software for Growing Businesses
               </h1>
             </Reveal>
             <Reveal delay={160}>
@@ -509,7 +451,7 @@ export default function OonooLanding() {
                 <div className="oo-display text-2xl font-semibold"> 8 + Years</div>
                 <div className="mt-2 text-xs" style={{ color: T.muted }}>Team Experience</div>
               </div>
-              
+
             </div>
 
             <div className="oo-gradient-border oo-float absolute bottom-2 right-10 w-52" style={{ animationDelay: "1s" }}>
@@ -551,7 +493,7 @@ export default function OonooLanding() {
           <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Software for every layer of your business</h2>
         </Reveal>
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SERVICES.map((s, i) => (
+          {Services.map((s, i) => (
             <Reveal key={s.title} delay={i * 60}>
               <div className="oo-card p-6 h-full">
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={{ background: "rgba(139,92,246,0.12)" }}>
@@ -573,7 +515,7 @@ export default function OonooLanding() {
             <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Built by engineers who plan to still be here in year three</h2>
           </Reveal>
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden" style={{ background: T.border }}>
-            {FEATURES.map((f, i) => (
+            {Features.map((f, i) => (
               <Reveal key={f.title} delay={i * 50} className="h-full">
                 <div className="p-7 h-full" style={{ background: T.bg }}>
                   <f.icon size={20} color={T.accent} className="mb-4" />
@@ -595,7 +537,7 @@ export default function OonooLanding() {
         <div className="mt-16 relative pl-10">
           <div className="oo-timeline-line absolute left-[15px] top-1 bottom-1 w-px" />
           <div className="flex flex-col gap-10">
-            {PROCESS.map((p, i) => (
+            {Process.map((p, i) => (
               <Reveal key={p.title} delay={i * 70}>
                 <div className="relative flex gap-6 items-start">
                   <div className="absolute -left-10 w-8 h-8 rounded-full flex items-center justify-center" style={{ background: T.bg, border: `2px solid ${T.primary}` }}>
@@ -620,21 +562,58 @@ export default function OonooLanding() {
             <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Examples of platforms we develop</h2>
           </Reveal>
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {PROJECTS.map((p, i) => (
+            {Pojects.map((p, i) => (
               <Reveal key={p.title} delay={i * 60}>
-                <div className="oo-card overflow-hidden h-full flex flex-col">
-                  <div className="h-36 relative" style={{ background: `linear-gradient(135deg, ${p.color1}, ${p.color2})` }}>
-                    <div className="absolute inset-0 oo-bg-grid opacity-40" />
-                    <span className="absolute bottom-3 left-4 text-xs font-medium px-2.5 py-1 rounded-full oo-glass">{p.tag}</span>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block h-full"
+                >
+                  <div className="oo-card overflow-hidden h-full flex flex-col cursor-pointer">
+
+                    <div
+                      className="h-36 relative bg-cover bg-center"
+                      style={{
+                        backgroundImage: `
+              linear-gradient(
+                rgba(0,0,0,0.25),
+                rgba(0,0,0,0.45)
+              ),
+              url(${p.image})
+            `,
+                      }}
+                    >
+                      <div className="absolute inset-0 oo-bg-grid opacity-40" />
+
+                      <span className="absolute bottom-3 left-4 text-xs font-medium px-2.5 py-1 rounded-full oo-glass">
+                        {p.tag}
+                      </span>
+                    </div>
+
+                    <div className="p-6 flex-1 flex flex-col">
+                      <h3 className="font-semibold mb-1.5 flex items-center gap-1.5">
+                        {p.title}
+                        <ArrowUpRight size={15} color={T.muted} />
+                      </h3>
+
+                      <p
+                        className="text-sm mb-3"
+                        style={{ color: T.muted }}
+                      >
+                        {p.desc}
+                      </p>
+
+                      <p
+                        className="text-xs mt-auto pt-3 font-medium"
+                        style={{ color: T.accent }}
+                      >
+                        {p.stack}
+                      </p>
+                    </div>
+
                   </div>
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h3 className="font-semibold mb-1.5 flex items-center gap-1.5">
-                      {p.title} <ArrowUpRight size={15} color={T.muted} />
-                    </h3>
-                    <p className="text-sm mb-3" style={{ color: T.muted }}>{p.desc}</p>
-                    <p className="text-xs mt-auto pt-3 font-medium" style={{ color: T.accent }}>{p.stack}</p>
-                  </div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
@@ -648,7 +627,7 @@ export default function OonooLanding() {
           <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">A modern, boring-on-purpose stack</h2>
         </Reveal>
         <div className="mt-12 flex flex-wrap gap-3">
-          {TECH.map((t, i) => (
+          {Tech.map((t, i) => (
             <Reveal key={t} delay={i * 30}>
               <span className="text-sm px-4 py-2 rounded-full oo-card inline-block" style={{ borderRadius: 999 }}>{t}</span>
             </Reveal>
@@ -664,7 +643,7 @@ export default function OonooLanding() {
             <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Let's build the next success story together.</h2>
           </Reveal>
           <div className="mt-14 grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
+            {Testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 90}>
                 <div className="oo-card p-7 h-full flex flex-col">
                   <div className="flex gap-1 mb-4">
@@ -694,7 +673,7 @@ export default function OonooLanding() {
           <h2 className="oo-display text-3xl sm:text-4xl font-semibold max-w-xl">Pricing shaped around your project, not a price list</h2>
         </Reveal>
         <div className="mt-14 grid md:grid-cols-3 gap-6 items-stretch">
-          {PRICING.map((p, i) => (
+          {Pricing.map((p, i) => (
             <Reveal key={p.name} delay={i * 90}>
               <div className={`oo-card p-8 h-full flex flex-col ${p.featured ? "oo-pricing-featured" : ""}`}>
                 {p.featured && (
@@ -789,7 +768,7 @@ export default function OonooLanding() {
           <div>
             <h4 className="text-sm font-semibold mb-4">Services</h4>
             <ul className="flex flex-col gap-2.5 text-sm" style={{ color: T.muted }}>
-              {SERVICES.slice(0, 5).map((s) => <li key={s.title}>{s.title}</li>)}
+              {Services.slice(0, 5).map((s) => <li key={s.title}>{s.title}</li>)}
             </ul>
           </div>
           <div>
