@@ -6,15 +6,8 @@ import {
   Mail, Phone, MapPin, Link2, MessageCircle, Contact,
 } from "lucide-react";
 
-/* ---------------------------------------------------------------------- */
-/*  Data                                                                  */
-/* ---------------------------------------------------------------------- */
-
 import { Pojects, Services, Features, Process, Tech, Testimonials, Pricing, FAQ } from "./constants/data.js";
 
-/* ---------------------------------------------------------------------- */
-/*  Design tokens (per brief)                                             */
-/* ---------------------------------------------------------------------- */
 const T = {
   primary: "#6D28D9",
   accent: "#8B5CF6",
@@ -24,9 +17,6 @@ const T = {
   muted: "#9BA1AE",
 };
 
-/* ---------------------------------------------------------------------- */
-/*  Scroll-reveal hook                                                    */
-/* ---------------------------------------------------------------------- */
 function useReveal() {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -65,9 +55,6 @@ function Reveal({ children, delay = 0, className = "" }) {
   );
 }
 
-/* ---------------------------------------------------------------------- */
-/*  Animated counter for hero live-ops panel                              */
-/* ---------------------------------------------------------------------- */
 function useCounter(target, duration = 1600, start = false) {
   const [val, setVal] = useState(0);
   useEffect(() => {
@@ -86,10 +73,6 @@ function useCounter(target, duration = 1600, start = false) {
   return val;
 }
 
-
-/* ---------------------------------------------------------------------- */
-/*  Small building blocks                                                 */
-/* ---------------------------------------------------------------------- */
 function GradientButton({ children, className = "", ...props }) {
   return (
     <button
@@ -116,9 +99,7 @@ function Eyebrow({ children }) {
   return <div className="oo-eyebrow">{children}</div>;
 }
 
-/* ---------------------------------------------------------------------- */
-/*  Main component                                                        */
-/* ---------------------------------------------------------------------- */
+
 export default function OonooLanding() {
   const [loading, setLoading] = useState(true);
   const [scrolled, setScrolled] = useState(false);
