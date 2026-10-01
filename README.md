@@ -1,16 +1,37 @@
-# React + Vite
+# Oonoo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based frontend application built with Vite.
 
-Currently, two official plugins are available:
+The project provides a modern frontend development setup using
+React and Vite, with a structured source code and public asset
+organization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- React-based frontend
+- Vite development and build tooling
+- Component-based application structure
+- Organized public assets
+- ESLint configuration for code quality
+- Fast development workflow with Vite HMR
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- Vite
+- ESLint
+- HTML
+- CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Project Structure
+
+```text
+oonoo/
+├── public/             # Public/static assets
+├── src/                # Application source code
+├── index.html          # Application entry point
+├── package.json        # Project configuration and dependencies
+├── package-lock.json   # Dependency lock file
+├── eslint.config.js    # ESLint configuration
+└── vite.config.js      # Vite configuration
